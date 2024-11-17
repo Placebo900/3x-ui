@@ -20,6 +20,7 @@ type Config struct {
 	FakeDNS          json_util.RawMessage `json:"fakedns"`
 	Observatory      json_util.RawMessage `json:"observatory"`
 	BurstObservatory json_util.RawMessage `json:"burstObservatory"`
+	Metrics          json_util.RawMessage `json:"metrics"`
 }
 
 func (c *Config) Equals(other *Config) bool {
