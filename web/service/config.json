@@ -23,6 +23,15 @@
       "settings": {
         "address": "127.0.0.1"
       }
+    },
+    {
+      "tag": "metrics_in",
+      "listen": "127.0.0.1",
+      "port": 11111,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      }
     }
   ],
   "outbounds": [
@@ -67,6 +76,13 @@
       },
       {
         "type": "field",
+        "inboundTag": [
+            "metrics_in"
+        ],
+        "outboundTag": "metrics_out"
+      },
+      {
+        "type": "field",
         "outboundTag": "blocked",
         "ip": [
           "geoip:private"
@@ -81,5 +97,8 @@
       }
     ]
   },
-  "stats": {}
+  "stats": {},
+  "metrics": {
+    "tag": "metrics_out"
+  }
 }
